@@ -133,16 +133,11 @@ public class MediaActivity
 			@Override
 			public void onClick(View v)
 			{
-				if(_bAudioConnected){
+				if(!_bAudioConnected){
 					//音声接続を要求
 					_dataconn.send("SSG:voice/start");
 
-					//janus+SGGがpeerIDを取得するまで３秒待機
-					//３秒は適当な数値
-					sleep(3000);
-
-					String remoteId = "AUDIO_"+_remoteId;
-					_mediaconnAudio = _peer.call(remoteId,_msLocal);
+					_mediaconnAudio = _peer.call(_remoteId,_msLocal);
 					setMediaCallback(_mediaconnAudio);
 					_bAudioConnected = true;
 				}else{
@@ -223,7 +218,7 @@ public class MediaActivity
 				//OPENしたので、ビデオのSTREAMを要求SSG:stream/start
 				Log.d(TAG, "onCallback: DataEvent OPEN");
 
-				_dataconn.send("SSG:stream/start");
+				_dataconn.send("SSG:stream/start," + _id);
 			}
 		});
 
