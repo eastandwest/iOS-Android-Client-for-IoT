@@ -239,7 +239,7 @@ typedef NS_ENUM(NSUInteger, AlertType)
          _bDataConnected = YES;
          
          NSLog(@"DATACONNECTION_EVENT_OPEN");
-         [_dataConnection send:@"SSG:stream/start"];
+         [_dataConnection send:[NSString stringWithFormat:@"SSG:stream/start,%@", _strOwnId]];
      }];
     
     [data on:SKW_DATACONNECTION_EVENT_DATA callback:^(NSObject* obj)
@@ -289,19 +289,14 @@ typedef NS_ENUM(NSUInteger, AlertType)
     }
 }
 
--(void)callWithAudio{
-    //何秒か待って、AUDIO_相手IDにcallする
-    [NSThread sleepForTimeInterval:2.5];
-    
-    NSString* remoteId = [NSString stringWithFormat:@"AUDIO_%@",_remoteId];
-    
+-(void)callWithAudio{    
     SKWMediaConstraints* constraints = [[SKWMediaConstraints alloc] init];
     constraints.videoFlag = NO;
     constraints.audioFlag = YES;
     
     _msLocal = [SKWNavigator getUserMedia:constraints];
     
-    _mediaAudioConnection = [_peer callWithId:remoteId stream:_msLocal];
+    _mediaAudioConnection = [_peer callWithId:_remoteId stream:_msLocal];
     [self setMediaCallbacks:_mediaAudioConnection];
 }
 
