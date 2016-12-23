@@ -12,7 +12,6 @@
 		3DAABD7419D5644200C765E1 /* MediaConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAABD7319D5644200C765E1 /* MediaConnectionViewController.m */; };
 		3DAABD7919D5644200C765E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DAABD7819D5644200C765E1 /* Images.xcassets */; };
 		3DB8290819FA09D2001041F8 /* PeersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DB8290719FA09D2001041F8 /* PeersListViewController.m */; };
-		9BBCC95BB9F6CB467D85711E /* libPods-SkyWay-iOS-Sample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93131B0D434B4014B651F626 /* libPods-SkyWay-iOS-Sample.a */; };
 		CA30CBFE1AE4E53A00A78322 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DAABD7A19D5644200C765E1 /* LaunchScreen.xib */; };
 		CA30CBFF1AE4E53C00A78322 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DAABD7519D5644200C765E1 /* Main.storyboard */; };
 		CA6859CB1B1BE47200B9577E /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = CA6859CA1B1BE47200B9577E /* image.png */; };
@@ -40,9 +39,9 @@
 		3DDB8D961A314B2F00FA2C4A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3DDB8D9A1A314C3C00FA2C4A /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		93131B0D434B4014B651F626 /* libPods-SkyWay-iOS-Sample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SkyWay-iOS-Sample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F9034A51E0C8D910074973D /* SkyWay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyWay.framework; path = ../../../Downloads/SkyWay.framework; sourceTree = "<group>"; };
 		C5096F6F4A8886CB5871AFBC /* Pods-SkyWay-iOS-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyWay-iOS-Sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyWay-iOS-Sample/Pods-SkyWay-iOS-Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		CA6859CA1B1BE47200B9577E /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
-		CA6C359A1BCE09A800F99F7D /* SkyWay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyWay.framework; path = "SkyWay-iOS-Sample/frameworks/SkyWay.framework"; sourceTree = "<group>"; };
 		CAC6AFC41C27B4DF002C856D /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		CAC6AFC61C27B4FA002C856D /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		CAC6AFC81C27B505002C856D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -56,7 +55,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BBCC95BB9F6CB467D85711E /* libPods-SkyWay-iOS-Sample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +114,6 @@
 				CAC6AFC81C27B505002C856D /* libsqlite3.tbd */,
 				CAC6AFC61C27B4FA002C856D /* libicucore.tbd */,
 				CAC6AFC41C27B4DF002C856D /* libc++.tbd */,
-				CA6C359A1BCE09A800F99F7D /* SkyWay.framework */,
 				CAD2621A1B8E9EAF000D4782 /* CoreVideo.framework */,
 				CAD2621B1B8E9EAF000D4782 /* VideoToolbox.framework */,
 				3D1DDB5C1A2585CC0052B79C /* AudioToolbox.framework */,
@@ -133,6 +130,7 @@
 		5E1A25671855F7E8A451019F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F9034A51E0C8D910074973D /* SkyWay.framework */,
 				93131B0D434B4014B651F626 /* libPods-SkyWay-iOS-Sample.a */,
 			);
 			name = Frameworks;
@@ -154,12 +152,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DAABD8B19D5644200C765E1 /* Build configuration list for PBXNativeTarget "SkyWay-iOS-Sample" */;
 			buildPhases = (
-				B0AC1568562781D4C5386B13 /* 📦 Check Pods Manifest.lock */,
+				B0AC1568562781D4C5386B13 /* [CP] Check Pods Manifest.lock */,
 				3DAABD6419D5644200C765E1 /* Sources */,
 				3DAABD6519D5644200C765E1 /* Frameworks */,
 				3DAABD6619D5644200C765E1 /* Resources */,
-				8CC5EEBC8AFA8DC4A993FBA7 /* 📦 Embed Pods Frameworks */,
-				B74DABEAC4A0917306D0874D /* 📦 Copy Pods Resources */,
+				8CC5EEBC8AFA8DC4A993FBA7 /* [CP] Embed Pods Frameworks */,
+				B74DABEAC4A0917306D0874D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,12 +174,12 @@
 		3DAABD6019D5644200C765E1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					3DAABD6719D5644200C765E1 = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = YP76R8KFZE;
+						DevelopmentTeam = RMB6M5Q7Y6;
 					};
 				};
 			};
@@ -218,14 +216,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8CC5EEBC8AFA8DC4A993FBA7 /* 📦 Embed Pods Frameworks */ = {
+		8CC5EEBC8AFA8DC4A993FBA7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,29 +231,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkyWay-iOS-Sample/Pods-SkyWay-iOS-Sample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B0AC1568562781D4C5386B13 /* 📦 Check Pods Manifest.lock */ = {
+		B0AC1568562781D4C5386B13 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		B74DABEAC4A0917306D0874D /* 📦 Copy Pods Resources */ = {
+		B74DABEAC4A0917306D0874D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,8 +310,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -324,6 +324,7 @@
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -336,7 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -358,8 +359,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -369,13 +372,14 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -392,6 +396,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = RMB6M5Q7Y6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -420,6 +425,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = RMB6M5Q7Y6;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -133,20 +133,14 @@ public class MediaActivity
 			@Override
 			public void onClick(View v)
 			{
-				if(_bAudioConnected){
-					//音声接続を要求
-					_dataconn.send("SSG:voice/start");
-
-					//janus+SGGがpeerIDを取得するまで３秒待機
-					//３秒は適当な数値
-					sleep(3000);
-
-					String remoteId = "AUDIO_"+_remoteId;
-					_mediaconnAudio = _peer.call(remoteId,_msLocal);
+				if(!_bAudioConnected){
+					Log.d(TAG, "start to send voice");
+					_mediaconnAudio = _peer.call(_remoteId,_msLocal);
 					setMediaCallback(_mediaconnAudio);
 					_bAudioConnected = true;
 				}else{
 					//音声接続を切断
+					Log.d(TAG, "stop to send voice");
 					if(_mediaconnAudio != null){
 						_mediaconnAudio.close();
 						_bAudioConnected = false;
@@ -161,13 +155,6 @@ public class MediaActivity
 	}
 
 
-	public synchronized void sleep(long msec)
-	{
-		try
-		{
-			wait(msec);
-		}catch(InterruptedException e){}
-	}
 
 
     @Override
@@ -189,6 +176,7 @@ public class MediaActivity
         MediaConstraints constraints = new MediaConstraints();
 		constraints.videoFlag = false;
 		constraints.audioFlag = true;
+		Log.d(TAG, "start audio only getUserMedia");
         _msLocal = Navigator.getUserMedia(constraints);
     }
 
@@ -223,7 +211,11 @@ public class MediaActivity
 				//OPENしたので、ビデオのSTREAMを要求SSG:stream/start
 				Log.d(TAG, "onCallback: DataEvent OPEN");
 
-				_dataconn.send("SSG:stream/start");
+				String str = "SSG:stream/start," + _id;
+
+				Log.d(TAG, "attempt to send message ... " + str);
+
+				_dataconn.send(str);
 			}
 		});
 

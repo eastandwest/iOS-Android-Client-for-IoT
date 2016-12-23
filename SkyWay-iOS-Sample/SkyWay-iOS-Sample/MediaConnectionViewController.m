@@ -15,8 +15,8 @@
 
 // Enter your APIkey and Domain
 // Please check this page. >> https://skyway.io/ds/
-static NSString *const kAPIkey = @"yourAPIKEY";
-static NSString *const kDomain = @"yourDomain";
+static NSString *const kAPIkey = @"";
+static NSString *const kDomain = @"";
 
 
 typedef NS_ENUM(NSUInteger, ViewTag)
@@ -235,11 +235,16 @@ typedef NS_ENUM(NSUInteger, AlertType)
 
     [data on:SKW_DATACONNECTION_EVENT_OPEN callback:^(NSObject* obj)
      {
-         //DataConnectionがオープンされたら@"SSG:stream/start"でIoTデバイス側にビデオストリーム開始の要求
+         //DataConnectionがオープンされたら@"SSG:stream/start,<mypeerid>"でIoTデバイス側にビデオストリーム開始の要求
          _bDataConnected = YES;
          
          NSLog(@"DATACONNECTION_EVENT_OPEN");
-         [_dataConnection send:@"SSG:stream/start"];
+         
+         NSMutableString *message = [NSMutableString stringWithString: @"SSG:stream/start,"];
+         [message appendString: _strOwnId];
+         
+         NSLog(@"attempt to send request message: %@", message);
+         [_dataConnection send:message];
      }];
     
     [data on:SKW_DATACONNECTION_EVENT_DATA callback:^(NSObject* obj)
@@ -282,7 +287,6 @@ typedef NS_ENUM(NSUInteger, AlertType)
 -(void)touchAudioButton:(NSObject *)sender
 {
     if(_bAudioConnected == NO){
-        [_dataConnection send:@"SSG:voice/start"];
         [self callWithAudio];
     }else{
         [self closeAudio];
@@ -293,7 +297,7 @@ typedef NS_ENUM(NSUInteger, AlertType)
     //何秒か待って、AUDIO_相手IDにcallする
     [NSThread sleepForTimeInterval:2.5];
     
-    NSString* remoteId = [NSString stringWithFormat:@"AUDIO_%@",_remoteId];
+    NSString* remoteId = _remoteId;
     
     SKWMediaConstraints* constraints = [[SKWMediaConstraints alloc] init];
     constraints.videoFlag = NO;
