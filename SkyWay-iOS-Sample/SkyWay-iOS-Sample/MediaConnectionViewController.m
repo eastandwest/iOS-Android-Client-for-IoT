@@ -294,9 +294,6 @@ typedef NS_ENUM(NSUInteger, AlertType)
 }
 
 -(void)callWithAudio{
-    //何秒か待って、AUDIO_相手IDにcallする
-    [NSThread sleepForTimeInterval:2.5];
-    
     NSString* remoteId = _remoteId;
     
     SKWMediaConstraints* constraints = [[SKWMediaConstraints alloc] init];
