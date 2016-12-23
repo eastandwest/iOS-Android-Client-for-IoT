@@ -10,7 +10,7 @@
 ## how to use
 
 1. touch **Connect**
-2. select peerid of [SSG](/eastandwest/signalinggateway) (configured in conf/skyway.json)
+2. select peerid of [SSG](https://github.com/eastandwest/signalinggateway) (configured in conf/skyway.json)
   - video stream from Janus Gateway will automatically appear
 3. touch start sound
   - voice will be upstreamed to Janus Gateway
