@@ -3,9 +3,9 @@
 ## how to build
 
 - iOS
-  - [[tree/master/SkyWay-iOS-Sample]]
+  - [build manual for iOS](https://github.com/eastandwest/iOS-Android-Client-for-IoT/tree/master/SkyWay-iOS-Sample)
 - Android
-  - [[tree/master/SkyWay-Android-Sample]]
+  - [build manual for Android](https://github.com/eastandwest/iOS-Android-Client-for-IoT/tree/master/SkyWay-Android-Sample)
 
 ## how to use
 
